@@ -1,11 +1,11 @@
 # Create ZIO Website
 
-description
-
-> created by [create-initializer](https://github.com/ClassicOldSong/create-initializer).
-
-## Use
+To install a new ZIO website for your ZIO project, you can use the following command.
 
 ```bash
-npx create-zio-website <name>
+npx @zio.dev/create-zio-website <name>
 ```
+
+> **Note**
+> You should not use this command directly to create a documentation website for your project, unless you know what you're doing. Instead, we have a `zio-sbt-website` plugin which is responsible for creating a website for your project through sbt commands.
+
