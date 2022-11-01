@@ -1,7 +1,6 @@
 {
   "name": "@zio.dev/create-zio-website",
   "description": "Template for ZIO Websites",
-  "version": "0.0.1-4",
   "author": "Milad Khajavi <khajavi@gmail.com>",
   "bin": "src/cli.js",
   "files": [
