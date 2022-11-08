@@ -29,7 +29,7 @@ const config = {
           id: 'default',
           path: './docs',
           routeBasePath: '/',
-          sidebarPath: require.resolve('./docs/sidebar.js'),
+          sidebarPath: require.resolve('./docs/sidebars.js'),
        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
