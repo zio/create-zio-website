@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import resolve from "path";
-import create from "create-initializer";
+const { resolve } = await import('path');
+const { create } = await import('create-initializer');
 
 const templateRoot = resolve(__dirname, '..', 'templates');
 
