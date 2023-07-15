@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const { resolve } = require('path');
-const { create } = require('create-initializer');
+import { resolve } from 'path';
+import { create } from 'create-initializer';
 
 const templateRoot = resolve(__dirname, '..', 'templates');
 
