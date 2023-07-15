@@ -8,7 +8,7 @@
     "templates"
   ],
   "dependencies": {
-    "create-initializer": "^1.2.0"
+    "create-initializer": "1.2.0"
   },
   "license": "Apache-2.0"
 }
