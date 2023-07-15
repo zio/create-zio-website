@@ -2,10 +2,9 @@
 
 import { resolve, dirname } from 'path';
 import { create } from 'create-initializer';
+import { fileURLToPath } from 'url';
 
-const module_url = import.meta.url;
-
-const templateRoot = resolve(dirname(module_url), '..', 'templates');
+const templateRoot = fileURLToPath(import.meta.url).replace('\/src\/cli.js', '') + '/templates';
 
 const caveat = `
 This is a caveat!
