@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { create } from 'create-initializer';
 
-const templateRoot = resolve(__dirname, '..', 'templates');
+const module_url = import.meta.url;
+
+const templateRoot = resolve(dirname(module_url), '..', 'templates');
 
 const caveat = `
 This is a caveat!
