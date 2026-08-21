@@ -1,16 +1,23 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes: prismThemes} = require('prism-react-renderer');
+
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '{{name}}',
-  url: 'https://zio.dev/{{lower name}}',
-  baseUrl: '/',
+  // Docusaurus 3 rejects a `url` carrying a sub-path; the path belongs in `baseUrl`.
+  url: 'https://zio.dev',
+  baseUrl: '/{{lower name}}/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'img/favicon.png',
 
   organizationName: 'zio', 
