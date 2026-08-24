@@ -14,6 +14,14 @@ const config = {
   baseUrl: '/{{lower name}}/',
   onBrokenLinks: 'throw',
   markdown: {
+    // `.md` is parsed as CommonMark, `.mdx` as MDX.
+    //
+    // Docusaurus 2 used @mdx-js/mdx v1, which tolerated bare `<` and `{` in prose. v3 treats
+    // them as JSX, so a line like "FS2 <-> ZStream conversions" becomes a hard build error.
+    // zio-sbt-website compiles docs with mdoc, which emits `.md`, and those files are prose
+    // written for CommonMark rather than MDX. Parsing them as CommonMark keeps the upgrade from
+    // breaking existing documentation; a project that wants JSX can still use `.mdx`.
+    format: 'detect',
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
