@@ -5,6 +5,9 @@
 /build
 
 # Generated files
+# `docs` holds mdoc output: zio-sbt-website points `mdocOut` here, so the contents are
+# compiled from the project's own docs sources rather than authored in the website.
+/docs
 .docusaurus
 .cache-loader
 

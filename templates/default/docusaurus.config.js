@@ -1,16 +1,31 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes: prismThemes} = require('prism-react-renderer');
+
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '{{name}}',
-  url: 'https://zio.dev/{{lower name}}',
-  baseUrl: '/',
+  // Docusaurus 3 rejects a `url` carrying a sub-path; the path belongs in `baseUrl`.
+  url: 'https://zio.dev',
+  baseUrl: '/{{lower name}}/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  markdown: {
+    // `.md` is parsed as CommonMark, `.mdx` as MDX.
+    //
+    // Docusaurus 2 used @mdx-js/mdx v1, which tolerated bare `<` and `{` in prose. v3 treats
+    // them as JSX, so a line like "FS2 <-> ZStream conversions" becomes a hard build error.
+    // zio-sbt-website compiles docs with mdoc, which emits `.md`, and those files are prose
+    // written for CommonMark rather than MDX. Parsing them as CommonMark keeps the upgrade from
+    // breaking existing documentation; a project that wants JSX can still use `.mdx`.
+    format: 'detect',
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'img/favicon.png',
 
   organizationName: 'zio', 
