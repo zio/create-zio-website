@@ -2,13 +2,23 @@
   "name": "@zio.dev/create-zio-website",
   "description": "Template for ZIO Websites",
   "author": "Milad Khajavi <khajavi@gmail.com>",
-  "bin": "src/cli.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zio/create-zio-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zio/create-zio-website/issues"
+  },
+  "homepage": "https://github.com/zio/create-zio-website#readme",
+  "bin": {
+    "create-zio-website": "src/cli.js"
+  },
   "files": [
     "src",
     "templates"
   ],
   "dependencies": {
     "create-initializer": "1.2.0"
-  },
-  "license": "Apache-2.0"
+  }
 }
